@@ -50,7 +50,7 @@ int main(void)
 
     dim3 dimBlock(5, 5);
     dim3 dimGrid(2, 2);
-    add_matrix<<<dimBlock, dimGrid>>>(d_a, d_b, d_c);
+    add_matrix<<<dimGrid, dimBlock>>>(d_a, d_b, d_c);
 
     cudaDeviceSynchronize();
 
