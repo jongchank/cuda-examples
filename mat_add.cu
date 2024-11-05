@@ -46,7 +46,7 @@ int main(void)
     cudaMemcpy(d_a, a, X * Y * sizeof(int), cudaMemcpyHostToDevice);
     cudaMemcpy(d_b, b, X * Y * sizeof(int), cudaMemcpyHostToDevice);
 
-    add_matrix<<<1, 10>>>(d_a, d_b, d_c);
+    add_matrix<<<10, 10>>>(d_a, d_b, d_c);
 
     cudaDeviceSynchronize();
 
